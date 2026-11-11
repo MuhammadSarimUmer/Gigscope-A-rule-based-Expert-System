@@ -1,0 +1,12 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Weak or missing packages"; labelloc=t;
+s_verdict_fix_conversion [label="Fix conversion first", fillcolor="#D7BDE2"];
+s_add_three_tier_packages [label="Add three-tier packages", fillcolor="#ABEBC6"];
+s_missing_packages_signal [label="Missing package structure", fillcolor="#F9E79F"];
+s_weak_packages [label="Weak or missing packages", fillcolor="#F5B7B1"];
+s_missing_packages_signal -> s_weak_packages [label="R139"];
+s_weak_packages -> s_add_three_tier_packages [label="R196"];
+s_weak_packages -> s_verdict_fix_conversion [label="R227"];
+}

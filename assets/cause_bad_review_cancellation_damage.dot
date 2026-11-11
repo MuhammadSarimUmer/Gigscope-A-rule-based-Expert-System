@@ -1,0 +1,17 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Recent bad review / cancellation damage"; labelloc=t;
+s_reputation_damage [label="Reputation damage", fillcolor="#F9E79F"];
+s_recent_negative_yes [label="recent negative yes", fillcolor="#A8D5E2"];
+s_bad_review_cancellation_damage [label="Recent bad review / cance...", fillcolor="#F5B7B1"];
+s_verdict_fix_trust [label="Fix trust and social proo...", fillcolor="#D7BDE2"];
+s_order_completion_risk [label="Order completion risk", fillcolor="#F9E79F"];
+s_address_negative_review [label="Address recent negative r...", fillcolor="#ABEBC6"];
+s_reputation_damage -> s_bad_review_cancellation_damage [label="R152"];
+s_order_completion_risk -> s_bad_review_cancellation_damage [label="R165"];
+s_reputation_damage -> s_bad_review_cancellation_damage [label="R186"];
+s_recent_negative_yes -> s_bad_review_cancellation_damage [label="R186"];
+s_bad_review_cancellation_damage -> s_address_negative_review [label="R214"];
+s_bad_review_cancellation_damage -> s_verdict_fix_trust [label="R229"];
+}

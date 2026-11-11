@@ -1,0 +1,66 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - seo"; labelloc=t;
+{ rank=same; k_impressions_low; k_title_length_bad; k_language_bad; k_desc_long_ok; k_desc_short; k_title_keyword_yes; k_seo_wording_bad; k_ctr_weak; k_title_keyword_no; k_tags_good; k_tags_poor; k_conversion_poor; k_impressions_avg; k_keyword_cannibal_yes; }
+k_impressions_low [label="impressions low", fillcolor="#A8D5E2"];
+k_title_length_bad [label="title length bad", fillcolor="#A8D5E2"];
+k_language_bad [label="language bad", fillcolor="#A8D5E2"];
+k_desc_long_ok [label="desc long ok", fillcolor="#A8D5E2"];
+k_desc_short [label="desc short", fillcolor="#A8D5E2"];
+k_title_keyword_yes [label="title keyword yes", fillcolor="#A8D5E2"];
+k_seo_wording_bad [label="seo wording bad", fillcolor="#A8D5E2"];
+k_ctr_weak [label="ctr weak", fillcolor="#A8D5E2"];
+k_title_keyword_no [label="title keyword no", fillcolor="#A8D5E2"];
+k_tags_good [label="tags good", fillcolor="#A8D5E2"];
+k_tags_poor [label="tags poor", fillcolor="#A8D5E2"];
+k_conversion_poor [label="conversion poor", fillcolor="#A8D5E2"];
+k_impressions_avg [label="impressions avg", fillcolor="#A8D5E2"];
+k_keyword_cannibal_yes [label="keyword cannibal yes", fillcolor="#A8D5E2"];
+{ rank=same; k_healthy_engagement_signals; k_click_attraction_weak; k_low_conversion_signals; k_weak_gig_seo; k_poor_visibility; k_weak_first_impression; k_language_quality_issue; }
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_click_attraction_weak [label="Weak click attraction", fillcolor="#F9E79F"];
+k_low_conversion_signals [label="Low conversion signals", fillcolor="#F9E79F"];
+k_weak_gig_seo [label="Weak gig SEO", fillcolor="#F9E79F"];
+k_poor_visibility [label="Poor visibility", fillcolor="#F9E79F"];
+k_weak_first_impression [label="Weak first impression", fillcolor="#F9E79F"];
+k_language_quality_issue [label="Language quality issue", fillcolor="#F9E79F"];
+{ rank=same; k_verdict_fix_visibility; }
+k_verdict_fix_visibility [label="Fix visibility first", fillcolor="#D7BDE2"];
+{ rank=same; k_refresh_tags_description_seo; k_rewrite_gig_title_keyword; }
+k_refresh_tags_description_seo [label="Refresh tags and descript...", fillcolor="#ABEBC6"];
+k_rewrite_gig_title_keyword [label="Rewrite gig title around ...", fillcolor="#ABEBC6"];
+{ rank=same; k_poor_gig_title_seo; k_weak_profile_description; }
+k_poor_gig_title_seo [label="Poor gig title and keywords", fillcolor="#F5B7B1"];
+k_weak_profile_description [label="Weak profile description", fillcolor="#F5B7B1"];
+k_title_keyword_no -> k_weak_gig_seo [label="R037"];
+k_title_length_bad -> k_weak_gig_seo [label="R038"];
+k_tags_poor -> k_weak_gig_seo [label="R039"];
+k_desc_short -> k_weak_gig_seo [label="R040"];
+k_seo_wording_bad -> k_weak_gig_seo [label="R041"];
+k_language_bad -> k_language_quality_issue [label="R042"];
+k_keyword_cannibal_yes -> k_poor_visibility [label="R043"];
+k_title_keyword_yes -> k_healthy_engagement_signals [label="R044"];
+k_tags_good -> k_healthy_engagement_signals [label="R044"];
+k_desc_long_ok -> k_healthy_engagement_signals [label="R044"];
+k_seo_wording_bad -> k_weak_first_impression [label="R045"];
+k_language_bad -> k_weak_first_impression [label="R045"];
+k_title_keyword_yes -> k_click_attraction_weak [label="R046"];
+k_ctr_weak -> k_click_attraction_weak [label="R046"];
+k_impressions_low -> k_poor_visibility [label="R047"];
+k_title_keyword_no -> k_poor_visibility [label="R047"];
+k_desc_short -> k_low_conversion_signals [label="R048"];
+k_conversion_poor -> k_low_conversion_signals [label="R048"];
+k_impressions_avg -> k_healthy_engagement_signals [label="R133"];
+k_title_keyword_yes -> k_healthy_engagement_signals [label="R133"];
+k_weak_gig_seo -> k_poor_gig_title_seo [label="R140"];
+k_weak_gig_seo -> k_poor_gig_title_seo [label="R141"];
+k_language_quality_issue -> k_poor_gig_title_seo [label="R141"];
+k_language_quality_issue -> k_weak_profile_description [label="R162"];
+k_poor_visibility -> k_poor_gig_title_seo [label="R167"];
+k_poor_gig_title_seo -> k_rewrite_gig_title_keyword [label="R197"];
+k_poor_gig_title_seo -> k_refresh_tags_description_seo [label="R198"];
+k_poor_gig_title_seo -> k_verdict_fix_visibility [label="R199"];
+}

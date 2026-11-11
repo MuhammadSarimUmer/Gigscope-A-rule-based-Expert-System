@@ -1,0 +1,8 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Inconsistent online presence"; labelloc=t;
+s_inconsistent_online_presence [label="Inconsistent online prese...", fillcolor="#F5B7B1"];
+s_schedule_online_hours [label="Schedule consistent onlin...", fillcolor="#ABEBC6"];
+s_inconsistent_online_presence -> s_schedule_online_hours [label="R209"];
+}

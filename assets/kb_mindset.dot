@@ -1,0 +1,87 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - mindset"; labelloc=t;
+{ rank=same; k_gig_new; k_patience_high; k_rating_high; k_account_new; k_reviews_0; k_hours_high; k_routine_yes; k_hours_low; k_platform_upwork; k_reviews_5_19; k_hours_mid; k_patience_low; k_gigs_too_many; k_verified_yes; k_profile_high_complete; k_account_mature; k_proposals_low; k_reviews_20plus; }
+k_gig_new [label="gig new", fillcolor="#A8D5E2"];
+k_patience_high [label="patience high", fillcolor="#A8D5E2"];
+k_rating_high [label="rating high", fillcolor="#A8D5E2"];
+k_account_new [label="account new", fillcolor="#A8D5E2"];
+k_reviews_0 [label="reviews 0", fillcolor="#A8D5E2"];
+k_hours_high [label="hours high", fillcolor="#A8D5E2"];
+k_routine_yes [label="routine yes", fillcolor="#A8D5E2"];
+k_hours_low [label="hours low", fillcolor="#A8D5E2"];
+k_platform_upwork [label="platform upwork", fillcolor="#A8D5E2"];
+k_reviews_5_19 [label="reviews 5 19", fillcolor="#A8D5E2"];
+k_hours_mid [label="hours mid", fillcolor="#A8D5E2"];
+k_patience_low [label="patience low", fillcolor="#A8D5E2"];
+k_gigs_too_many [label="gigs too many", fillcolor="#A8D5E2"];
+k_verified_yes [label="verified yes", fillcolor="#A8D5E2"];
+k_profile_high_complete [label="profile high complete", fillcolor="#A8D5E2"];
+k_account_mature [label="account mature", fillcolor="#A8D5E2"];
+k_proposals_low [label="proposals low", fillcolor="#A8D5E2"];
+k_reviews_20plus [label="reviews 20plus", fillcolor="#A8D5E2"];
+{ rank=same; k_impatience_risk; k_healthy_engagement_signals; k_overcompetition_gigs; k_new_account_patience; k_proposal_volume_low; }
+k_impatience_risk [label="Impatience risk", fillcolor="#F9E79F"];
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_overcompetition_gigs [label="Too many live gigs", fillcolor="#F9E79F"];
+k_new_account_patience [label="New account patience needed", fillcolor="#F9E79F"];
+k_proposal_volume_low [label="Low proposal volume", fillcolor="#F9E79F"];
+{ rank=same; k_verdict_healthy_patient; }
+k_verdict_healthy_patient [label="Profile looks healthy: be...", fillcolor="#D7BDE2"];
+{ rank=same; k_impatience_quit_risk; k_profile_healthy_be_patient; }
+k_impatience_quit_risk [label="Impatience — profile OK", fillcolor="#F5B7B1"];
+k_profile_healthy_be_patient [label="Profile healthy — needs t...", fillcolor="#F5B7B1"];
+{ rank=same; k_manage_expectations_timeline; k_stay_consistent_30_days; }
+k_manage_expectations_timeline [label="Reset timeline expectations", fillcolor="#ABEBC6"];
+k_stay_consistent_30_days [label="Stay consistent 30 more d...", fillcolor="#ABEBC6"];
+k_account_new -> k_impatience_risk [label="R012"];
+k_patience_low -> k_impatience_risk [label="R012"];
+k_patience_low -> k_impatience_risk [label="R116"];
+k_account_new -> k_impatience_risk [label="R116"];
+k_healthy_engagement_signals -> k_impatience_risk [label="R116"];
+k_patience_low -> k_impatience_risk [label="R117"];
+k_reviews_0 -> k_impatience_risk [label="R117"];
+k_gig_new -> k_impatience_risk [label="R117"];
+k_routine_yes -> k_healthy_engagement_signals [label="R118"];
+k_hours_high -> k_healthy_engagement_signals [label="R118"];
+k_patience_high -> k_new_account_patience [label="R119"];
+k_account_new -> k_new_account_patience [label="R119"];
+k_hours_low -> k_proposal_volume_low [label="R120"];
+k_proposals_low -> k_proposal_volume_low [label="R120"];
+k_platform_upwork -> k_proposal_volume_low [label="R120"];
+k_gigs_too_many -> k_overcompetition_gigs [label="R121"];
+k_hours_mid -> k_overcompetition_gigs [label="R121"];
+k_profile_high_complete -> k_healthy_engagement_signals [label="R122"];
+k_routine_yes -> k_healthy_engagement_signals [label="R122"];
+k_reviews_5_19 -> k_healthy_engagement_signals [label="R122"];
+k_patience_low -> k_impatience_risk [label="R123"];
+k_profile_high_complete -> k_impatience_risk [label="R123"];
+k_verified_yes -> k_impatience_risk [label="R123"];
+k_healthy_engagement_signals -> k_profile_healthy_be_patient [label="R159"];
+k_account_new -> k_profile_healthy_be_patient [label="R159"];
+k_new_account_patience -> k_profile_healthy_be_patient [label="R159"];
+k_healthy_engagement_signals -> k_impatience_quit_risk [label="R160"];
+k_patience_low -> k_impatience_quit_risk [label="R160"];
+k_impatience_risk -> k_impatience_quit_risk [label="R161"];
+k_healthy_engagement_signals -> k_impatience_quit_risk [label="R161"];
+k_healthy_engagement_signals -> k_profile_healthy_be_patient [label="R169"];
+k_account_mature -> k_profile_healthy_be_patient [label="R169"];
+k_rating_high -> k_profile_healthy_be_patient [label="R169"];
+k_reviews_20plus -> k_profile_healthy_be_patient [label="R169"];
+k_healthy_engagement_signals -> k_profile_healthy_be_patient [label="R170"];
+k_reviews_5_19 -> k_profile_healthy_be_patient [label="R170"];
+k_routine_yes -> k_profile_healthy_be_patient [label="R170"];
+k_new_account_patience -> k_profile_healthy_be_patient [label="R171"];
+k_healthy_engagement_signals -> k_profile_healthy_be_patient [label="R171"];
+k_new_account_patience -> k_profile_healthy_be_patient [label="R172"];
+k_healthy_engagement_signals -> k_profile_healthy_be_patient [label="R172"];
+k_reviews_0 -> k_profile_healthy_be_patient [label="R172"];
+k_profile_healthy_be_patient -> k_stay_consistent_30_days [label="R221"];
+k_profile_healthy_be_patient -> k_verdict_healthy_patient [label="R222"];
+k_impatience_quit_risk -> k_stay_consistent_30_days [label="R223"];
+k_impatience_quit_risk -> k_manage_expectations_timeline [label="R224"];
+k_impatience_quit_risk -> k_verdict_healthy_patient [label="R225"];
+}

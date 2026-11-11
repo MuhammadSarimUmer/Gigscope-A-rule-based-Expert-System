@@ -1,0 +1,75 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - communication"; labelloc=t;
+{ rank=same; k_reputation_damage; k_order_completion_risk; k_communication_gap; k_healthy_engagement_signals; k_low_conversion_signals; k_wrong_market_fit; k_slow_responsiveness; }
+k_reputation_damage [label="Reputation damage", fillcolor="#F9E79F"];
+k_order_completion_risk [label="Order completion risk", fillcolor="#F9E79F"];
+k_communication_gap [label="Communication gap", fillcolor="#F9E79F"];
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_low_conversion_signals [label="Low conversion signals", fillcolor="#F9E79F"];
+k_wrong_market_fit [label="Wrong market fit", fillcolor="#F9E79F"];
+k_slow_responsiveness [label="Slow responsiveness", fillcolor="#F9E79F"];
+{ rank=same; k_delivery_late; k_response_fast; k_response_slow; k_cancellations_recent; k_timezone_match; k_response_rate_high; k_platform_upwork; k_message_quality_bad; k_response_rate_low; k_response_ok; k_conversion_poor; k_timezone_mismatch; k_message_quality_good; k_response_very_slow; k_consult_yes; }
+k_delivery_late [label="delivery late", fillcolor="#A8D5E2"];
+k_response_fast [label="response fast", fillcolor="#A8D5E2"];
+k_response_slow [label="response slow", fillcolor="#A8D5E2"];
+k_cancellations_recent [label="cancellations recent", fillcolor="#A8D5E2"];
+k_timezone_match [label="timezone match", fillcolor="#A8D5E2"];
+k_response_rate_high [label="response rate high", fillcolor="#A8D5E2"];
+k_platform_upwork [label="platform upwork", fillcolor="#A8D5E2"];
+k_message_quality_bad [label="message quality bad", fillcolor="#A8D5E2"];
+k_response_rate_low [label="response rate low", fillcolor="#A8D5E2"];
+k_response_ok [label="response ok", fillcolor="#A8D5E2"];
+k_conversion_poor [label="conversion poor", fillcolor="#A8D5E2"];
+k_timezone_mismatch [label="timezone mismatch", fillcolor="#A8D5E2"];
+k_message_quality_good [label="message quality good", fillcolor="#A8D5E2"];
+k_response_very_slow [label="response very slow", fillcolor="#A8D5E2"];
+k_consult_yes [label="consult yes", fillcolor="#A8D5E2"];
+{ rank=same; k_reply_within_one_hour; k_schedule_online_hours; k_improve_response_rate; }
+k_reply_within_one_hour [label="Reply within one hour for...", fillcolor="#ABEBC6"];
+k_schedule_online_hours [label="Schedule consistent onlin...", fillcolor="#ABEBC6"];
+k_improve_response_rate [label="Improve response rate to ...", fillcolor="#ABEBC6"];
+{ rank=same; k_verdict_fix_communication; }
+k_verdict_fix_communication [label="Fix communication first", fillcolor="#D7BDE2"];
+{ rank=same; k_low_response_rate; k_wrong_target_clients; k_slow_response_time; k_inconsistent_online_presence; }
+k_low_response_rate [label="Low response rate", fillcolor="#F5B7B1"];
+k_wrong_target_clients [label="Wrong target clients or r...", fillcolor="#F5B7B1"];
+k_slow_response_time [label="Slow response time", fillcolor="#F5B7B1"];
+k_inconsistent_online_presence [label="Inconsistent online prese...", fillcolor="#F5B7B1"];
+k_response_very_slow -> k_slow_responsiveness [label="R069"];
+k_response_slow -> k_slow_responsiveness [label="R070"];
+k_response_rate_low -> k_communication_gap [label="R071"];
+k_message_quality_bad -> k_communication_gap [label="R072"];
+k_timezone_mismatch -> k_wrong_market_fit [label="R073"];
+k_delivery_late -> k_order_completion_risk [label="R074"];
+k_response_fast -> k_healthy_engagement_signals [label="R075"];
+k_response_rate_high -> k_healthy_engagement_signals [label="R075"];
+k_response_fast -> k_healthy_engagement_signals [label="R076"];
+k_timezone_match -> k_healthy_engagement_signals [label="R076"];
+k_consult_yes -> k_low_conversion_signals [label="R077"];
+k_conversion_poor -> k_low_conversion_signals [label="R077"];
+k_delivery_late -> k_reputation_damage [label="R078"];
+k_cancellations_recent -> k_reputation_damage [label="R078"];
+k_response_ok -> k_healthy_engagement_signals [label="R079"];
+k_message_quality_good -> k_healthy_engagement_signals [label="R079"];
+k_response_very_slow -> k_slow_responsiveness [label="R080"];
+k_platform_upwork -> k_slow_responsiveness [label="R080"];
+k_message_quality_bad -> k_communication_gap [label="R132"];
+k_response_slow -> k_communication_gap [label="R132"];
+k_slow_responsiveness -> k_slow_response_time [label="R147"];
+k_communication_gap -> k_low_response_rate [label="R148"];
+k_response_rate_low -> k_low_response_rate [label="R148"];
+k_wrong_market_fit -> k_wrong_target_clients [label="R149"];
+k_timezone_mismatch -> k_wrong_target_clients [label="R149"];
+k_communication_gap -> k_low_response_rate [label="R182"];
+k_timezone_mismatch -> k_wrong_target_clients [label="R183"];
+k_slow_response_time -> k_reply_within_one_hour [label="R206"];
+k_slow_response_time -> k_verdict_fix_communication [label="R207"];
+k_low_response_rate -> k_improve_response_rate [label="R208"];
+k_inconsistent_online_presence -> k_schedule_online_hours [label="R209"];
+k_slow_response_time -> k_verdict_fix_communication [label="R231"];
+k_low_response_rate -> k_verdict_fix_communication [label="R231"];
+}

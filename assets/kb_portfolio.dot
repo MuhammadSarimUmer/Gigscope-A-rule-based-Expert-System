@@ -1,0 +1,54 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - portfolio"; labelloc=t;
+{ rank=same; k_exp_high; k_portfolio_0; k_portfolio_3_5; k_reviews_0; k_case_study_no; k_case_study_yes; k_portfolio_stale; k_portfolio_relevant; k_portfolio_6plus; k_account_mature; k_portfolio_1_2; k_portfolio_irrelevant; k_exp_low; }
+k_exp_high [label="exp high", fillcolor="#A8D5E2"];
+k_portfolio_0 [label="portfolio 0", fillcolor="#A8D5E2"];
+k_portfolio_3_5 [label="portfolio 3 5", fillcolor="#A8D5E2"];
+k_reviews_0 [label="reviews 0", fillcolor="#A8D5E2"];
+k_case_study_no [label="case study no", fillcolor="#A8D5E2"];
+k_case_study_yes [label="case study yes", fillcolor="#A8D5E2"];
+k_portfolio_stale [label="portfolio stale", fillcolor="#A8D5E2"];
+k_portfolio_relevant [label="portfolio relevant", fillcolor="#A8D5E2"];
+k_portfolio_6plus [label="portfolio 6plus", fillcolor="#A8D5E2"];
+k_account_mature [label="account mature", fillcolor="#A8D5E2"];
+k_portfolio_1_2 [label="portfolio 1 2", fillcolor="#A8D5E2"];
+k_portfolio_irrelevant [label="portfolio irrelevant", fillcolor="#A8D5E2"];
+k_exp_low [label="exp low", fillcolor="#A8D5E2"];
+{ rank=same; k_thin_irrelevant_portfolio; }
+k_thin_irrelevant_portfolio [label="Thin or irrelevant portfo...", fillcolor="#F5B7B1"];
+{ rank=same; k_strong_skills_weak_presentation; k_healthy_engagement_signals; k_thin_portfolio_signal; k_trust_gap; }
+k_strong_skills_weak_presentation [label="Strong skills, weak prese...", fillcolor="#F9E79F"];
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_thin_portfolio_signal [label="Thin portfolio", fillcolor="#F9E79F"];
+k_trust_gap [label="Trust gap", fillcolor="#F9E79F"];
+{ rank=same; k_verdict_fix_trust; }
+k_verdict_fix_trust [label="Fix trust and social proo...", fillcolor="#D7BDE2"];
+{ rank=same; k_build_relevant_portfolio; }
+k_build_relevant_portfolio [label="Add three relevant portfo...", fillcolor="#ABEBC6"];
+k_portfolio_0 -> k_thin_portfolio_signal [label="R059"];
+k_portfolio_1_2 -> k_thin_portfolio_signal [label="R060"];
+k_portfolio_irrelevant -> k_thin_portfolio_signal [label="R061"];
+k_case_study_no -> k_thin_portfolio_signal [label="R062"];
+k_portfolio_3_5 -> k_thin_portfolio_signal [label="R062"];
+k_portfolio_stale -> k_trust_gap [label="R063"];
+k_portfolio_6plus -> k_healthy_engagement_signals [label="R064"];
+k_portfolio_relevant -> k_healthy_engagement_signals [label="R064"];
+k_portfolio_0 -> k_trust_gap [label="R065"];
+k_reviews_0 -> k_trust_gap [label="R065"];
+k_portfolio_relevant -> k_healthy_engagement_signals [label="R066"];
+k_case_study_yes -> k_healthy_engagement_signals [label="R066"];
+k_portfolio_irrelevant -> k_strong_skills_weak_presentation [label="R067"];
+k_exp_high -> k_strong_skills_weak_presentation [label="R067"];
+k_portfolio_0 -> k_thin_portfolio_signal [label="R068"];
+k_account_mature -> k_thin_portfolio_signal [label="R068"];
+k_exp_low -> k_thin_portfolio_signal [label="R130"];
+k_portfolio_0 -> k_thin_portfolio_signal [label="R130"];
+k_thin_portfolio_signal -> k_thin_irrelevant_portfolio [label="R144"];
+k_strong_skills_weak_presentation -> k_thin_irrelevant_portfolio [label="R158"];
+k_thin_irrelevant_portfolio -> k_build_relevant_portfolio [label="R202"];
+k_thin_irrelevant_portfolio -> k_verdict_fix_trust [label="R228"];
+}

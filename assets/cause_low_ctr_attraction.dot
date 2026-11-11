@@ -1,0 +1,15 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Low click-through (attraction)"; labelloc=t;
+s_improve_thumbnail_title_ctr [label="Improve thumbnail and tit...", fillcolor="#ABEBC6"];
+s_thumbnail_weak [label="thumbnail weak", fillcolor="#A8D5E2"];
+s_low_ctr_attraction [label="Low click-through (attrac...", fillcolor="#F5B7B1"];
+s_verdict_fix_visibility [label="Fix visibility first", fillcolor="#D7BDE2"];
+s_click_attraction_weak [label="Weak click attraction", fillcolor="#F9E79F"];
+s_click_attraction_weak -> s_low_ctr_attraction [label="R153"];
+s_click_attraction_weak -> s_low_ctr_attraction [label="R178"];
+s_thumbnail_weak -> s_low_ctr_attraction [label="R178"];
+s_low_ctr_attraction -> s_improve_thumbnail_title_ctr [label="R215"];
+s_low_ctr_attraction -> s_verdict_fix_visibility [label="R216"];
+}

@@ -1,0 +1,13 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Proposal volume too low"; labelloc=t;
+s_proposal_volume_too_low [label="Proposal volume too low", fillcolor="#F5B7B1"];
+s_proposal_volume_low [label="Low proposal volume", fillcolor="#F9E79F"];
+s_platform_upwork [label="platform upwork", fillcolor="#A8D5E2"];
+s_increase_proposal_volume [label="Increase weekly proposal ...", fillcolor="#ABEBC6"];
+s_proposal_volume_low -> s_proposal_volume_too_low [label="R156"];
+s_proposal_volume_low -> s_proposal_volume_too_low [label="R179"];
+s_platform_upwork -> s_proposal_volume_too_low [label="R179"];
+s_proposal_volume_too_low -> s_increase_proposal_volume [label="R220"];
+}

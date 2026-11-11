@@ -1,0 +1,62 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - proposals"; labelloc=t;
+{ rank=same; k_bid_spray; k_proposals_high; k_proposal_template; k_proposal_personal; k_platform_upwork; k_interview_poor; k_shortlist_low; k_connects_waste; k_proposals_mid; k_proposals_0; k_cover_long; k_platform_fiverr; k_proposals_low; }
+k_bid_spray [label="bid spray", fillcolor="#A8D5E2"];
+k_proposals_high [label="proposals high", fillcolor="#A8D5E2"];
+k_proposal_template [label="proposal template", fillcolor="#A8D5E2"];
+k_proposal_personal [label="proposal personal", fillcolor="#A8D5E2"];
+k_platform_upwork [label="platform upwork", fillcolor="#A8D5E2"];
+k_interview_poor [label="interview poor", fillcolor="#A8D5E2"];
+k_shortlist_low [label="shortlist low", fillcolor="#A8D5E2"];
+k_connects_waste [label="connects waste", fillcolor="#A8D5E2"];
+k_proposals_mid [label="proposals mid", fillcolor="#A8D5E2"];
+k_proposals_0 [label="proposals 0", fillcolor="#A8D5E2"];
+k_cover_long [label="cover long", fillcolor="#A8D5E2"];
+k_platform_fiverr [label="platform fiverr", fillcolor="#A8D5E2"];
+k_proposals_low [label="proposals low", fillcolor="#A8D5E2"];
+{ rank=same; k_poor_proposals; k_proposal_volume_too_low; }
+k_poor_proposals [label="Poor proposals", fillcolor="#F5B7B1"];
+k_proposal_volume_too_low [label="Proposal volume too low", fillcolor="#F5B7B1"];
+{ rank=same; k_healthy_engagement_signals; k_connects_inefficiency; k_weak_proposal_quality; k_proposal_volume_low; }
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_connects_inefficiency [label="Inefficient connects use", fillcolor="#F9E79F"];
+k_weak_proposal_quality [label="Weak proposal quality", fillcolor="#F9E79F"];
+k_proposal_volume_low [label="Low proposal volume", fillcolor="#F9E79F"];
+{ rank=same; k_verdict_fix_communication; }
+k_verdict_fix_communication [label="Fix communication first", fillcolor="#D7BDE2"];
+{ rank=same; k_tailored_proposals_daily; k_increase_proposal_volume; }
+k_tailored_proposals_daily [label="Send 10 tailored proposal...", fillcolor="#ABEBC6"];
+k_increase_proposal_volume [label="Increase weekly proposal ...", fillcolor="#ABEBC6"];
+k_proposal_template -> k_weak_proposal_quality [label="R093"];
+k_cover_long -> k_weak_proposal_quality [label="R094"];
+k_proposals_low -> k_proposal_volume_low [label="R095"];
+k_platform_upwork -> k_proposal_volume_low [label="R095"];
+k_proposals_0 -> k_proposal_volume_low [label="R096"];
+k_platform_upwork -> k_proposal_volume_low [label="R096"];
+k_connects_waste -> k_connects_inefficiency [label="R097"];
+k_shortlist_low -> k_weak_proposal_quality [label="R098"];
+k_interview_poor -> k_weak_proposal_quality [label="R099"];
+k_bid_spray -> k_weak_proposal_quality [label="R100"];
+k_proposal_personal -> k_healthy_engagement_signals [label="R101"];
+k_proposals_high -> k_healthy_engagement_signals [label="R101"];
+k_proposals_mid -> k_healthy_engagement_signals [label="R102"];
+k_proposal_personal -> k_healthy_engagement_signals [label="R102"];
+k_platform_fiverr -> k_healthy_engagement_signals [label="R103"];
+k_proposals_low -> k_healthy_engagement_signals [label="R103"];
+k_platform_upwork -> k_weak_proposal_quality [label="R124"];
+k_proposal_template -> k_weak_proposal_quality [label="R124"];
+k_weak_proposal_quality -> k_poor_proposals [label="R155"];
+k_proposal_volume_low -> k_proposal_volume_too_low [label="R156"];
+k_connects_inefficiency -> k_poor_proposals [label="R166"];
+k_proposal_volume_low -> k_proposal_volume_too_low [label="R179"];
+k_platform_upwork -> k_proposal_volume_too_low [label="R179"];
+k_weak_proposal_quality -> k_poor_proposals [label="R184"];
+k_bid_spray -> k_poor_proposals [label="R184"];
+k_poor_proposals -> k_tailored_proposals_daily [label="R211"];
+k_proposal_volume_too_low -> k_increase_proposal_volume [label="R220"];
+k_poor_proposals -> k_verdict_fix_communication [label="R230"];
+}

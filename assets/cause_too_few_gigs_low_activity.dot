@@ -1,0 +1,13 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Too few gigs or low activity"; labelloc=t;
+s_weekly_gig_updates [label="Weekly gig updates and ac...", fillcolor="#ABEBC6"];
+s_low_activity_signal [label="Low activity", fillcolor="#F9E79F"];
+s_too_few_gigs_low_activity [label="Too few gigs or low activ...", fillcolor="#F5B7B1"];
+s_hours_low [label="hours low", fillcolor="#A8D5E2"];
+s_low_activity_signal -> s_too_few_gigs_low_activity [label="R151"];
+s_low_activity_signal -> s_too_few_gigs_low_activity [label="R185"];
+s_hours_low -> s_too_few_gigs_low_activity [label="R185"];
+s_too_few_gigs_low_activity -> s_weekly_gig_updates [label="R213"];
+}

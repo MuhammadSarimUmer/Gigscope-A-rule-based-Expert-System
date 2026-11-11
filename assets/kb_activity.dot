@@ -1,0 +1,72 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - activity"; labelloc=t;
+{ rank=same; k_gig_new; k_promo_used; k_impressions_low; k_impressions_high; k_ctr_strong; k_routine_no; k_account_new; k_gig_mature; k_hours_low; k_update_stale; k_ctr_weak; k_conversion_good; k_platform_fiverr; k_conversion_poor; k_ctr_avg; k_impressions_avg; k_impressions_very_low; }
+k_gig_new [label="gig new", fillcolor="#A8D5E2"];
+k_promo_used [label="promo used", fillcolor="#A8D5E2"];
+k_impressions_low [label="impressions low", fillcolor="#A8D5E2"];
+k_impressions_high [label="impressions high", fillcolor="#A8D5E2"];
+k_ctr_strong [label="ctr strong", fillcolor="#A8D5E2"];
+k_routine_no [label="routine no", fillcolor="#A8D5E2"];
+k_account_new [label="account new", fillcolor="#A8D5E2"];
+k_gig_mature [label="gig mature", fillcolor="#A8D5E2"];
+k_hours_low [label="hours low", fillcolor="#A8D5E2"];
+k_update_stale [label="update stale", fillcolor="#A8D5E2"];
+k_ctr_weak [label="ctr weak", fillcolor="#A8D5E2"];
+k_conversion_good [label="conversion good", fillcolor="#A8D5E2"];
+k_platform_fiverr [label="platform fiverr", fillcolor="#A8D5E2"];
+k_conversion_poor [label="conversion poor", fillcolor="#A8D5E2"];
+k_ctr_avg [label="ctr avg", fillcolor="#A8D5E2"];
+k_impressions_avg [label="impressions avg", fillcolor="#A8D5E2"];
+k_impressions_very_low [label="impressions very low", fillcolor="#A8D5E2"];
+{ rank=same; k_healthy_engagement_signals; k_click_attraction_weak; k_new_account_patience; k_low_conversion_signals; k_low_activity_signal; k_poor_visibility; }
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_click_attraction_weak [label="Weak click attraction", fillcolor="#F9E79F"];
+k_new_account_patience [label="New account patience needed", fillcolor="#F9E79F"];
+k_low_conversion_signals [label="Low conversion signals", fillcolor="#F9E79F"];
+k_low_activity_signal [label="Low activity", fillcolor="#F9E79F"];
+k_poor_visibility [label="Poor visibility", fillcolor="#F9E79F"];
+{ rank=same; k_improve_gig_page_conversion; k_weekly_gig_updates; }
+k_improve_gig_page_conversion [label="Improve gig page conversion", fillcolor="#ABEBC6"];
+k_weekly_gig_updates [label="Weekly gig updates and ac...", fillcolor="#ABEBC6"];
+{ rank=same; k_verdict_fix_conversion; }
+k_verdict_fix_conversion [label="Fix conversion first", fillcolor="#D7BDE2"];
+{ rank=same; k_low_conversion_orders; k_too_few_gigs_low_activity; }
+k_low_conversion_orders [label="Low conversion (clicks, n...", fillcolor="#F5B7B1"];
+k_too_few_gigs_low_activity [label="Too few gigs or low activ...", fillcolor="#F5B7B1"];
+k_impressions_very_low -> k_poor_visibility [label="R104"];
+k_impressions_low -> k_low_activity_signal [label="R105"];
+k_update_stale -> k_low_activity_signal [label="R105"];
+k_ctr_weak -> k_click_attraction_weak [label="R106"];
+k_impressions_avg -> k_click_attraction_weak [label="R106"];
+k_ctr_weak -> k_click_attraction_weak [label="R107"];
+k_impressions_high -> k_click_attraction_weak [label="R107"];
+k_conversion_poor -> k_low_conversion_signals [label="R108"];
+k_ctr_strong -> k_low_conversion_signals [label="R108"];
+k_conversion_poor -> k_low_conversion_signals [label="R109"];
+k_ctr_avg -> k_low_conversion_signals [label="R109"];
+k_update_stale -> k_low_activity_signal [label="R110"];
+k_gig_mature -> k_low_activity_signal [label="R110"];
+k_hours_low -> k_low_activity_signal [label="R111"];
+k_account_new -> k_low_activity_signal [label="R111"];
+k_impressions_high -> k_healthy_engagement_signals [label="R112"];
+k_conversion_good -> k_healthy_engagement_signals [label="R112"];
+k_gig_new -> k_new_account_patience [label="R113"];
+k_impressions_very_low -> k_new_account_patience [label="R113"];
+k_promo_used -> k_low_conversion_signals [label="R114"];
+k_conversion_poor -> k_low_conversion_signals [label="R114"];
+k_routine_no -> k_low_activity_signal [label="R115"];
+k_update_stale -> k_low_activity_signal [label="R115"];
+k_platform_fiverr -> k_poor_visibility [label="R125"];
+k_impressions_low -> k_poor_visibility [label="R125"];
+k_low_activity_signal -> k_too_few_gigs_low_activity [label="R151"];
+k_low_conversion_signals -> k_low_conversion_orders [label="R154"];
+k_low_activity_signal -> k_too_few_gigs_low_activity [label="R185"];
+k_hours_low -> k_too_few_gigs_low_activity [label="R185"];
+k_too_few_gigs_low_activity -> k_weekly_gig_updates [label="R213"];
+k_low_conversion_orders -> k_improve_gig_page_conversion [label="R217"];
+k_low_conversion_orders -> k_verdict_fix_conversion [label="R218"];
+}

@@ -1,0 +1,15 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Price too low (quality signal)"; labelloc=t;
+s_raise_prices_modestly [label="Raise prices to credible ...", fillcolor="#ABEBC6"];
+s_price_mismatch_low [label="Price signals low quality", fillcolor="#F9E79F"];
+s_price_too_low_quality_signal [label="Price too low (quality si...", fillcolor="#F5B7B1"];
+s_discount_overuse [label="Discount overuse", fillcolor="#F9E79F"];
+s_verdict_fix_pricing [label="Fix pricing first", fillcolor="#D7BDE2"];
+s_price_mismatch_low -> s_price_too_low_quality_signal [label="R138"];
+s_discount_overuse -> s_price_too_low_quality_signal [label="R164"];
+s_price_mismatch_low -> s_price_too_low_quality_signal [label="R164"];
+s_price_too_low_quality_signal -> s_raise_prices_modestly [label="R194"];
+s_price_too_low_quality_signal -> s_verdict_fix_pricing [label="R195"];
+}

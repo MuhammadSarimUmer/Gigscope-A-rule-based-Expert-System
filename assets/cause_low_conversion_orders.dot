@@ -1,0 +1,17 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Low conversion (clicks, no orders)"; labelloc=t;
+s_low_conversion_signals [label="Low conversion signals", fillcolor="#F9E79F"];
+s_verdict_fix_conversion [label="Fix conversion first", fillcolor="#D7BDE2"];
+s_trust_gap [label="Trust gap", fillcolor="#F9E79F"];
+s_low_conversion_orders [label="Low conversion (clicks, n...", fillcolor="#F5B7B1"];
+s_improve_gig_page_conversion [label="Improve gig page conversion", fillcolor="#ABEBC6"];
+s_collect_first_reviews [label="Collect first reviews eth...", fillcolor="#ABEBC6"];
+s_low_conversion_signals -> s_low_conversion_orders [label="R154"];
+s_low_conversion_signals -> s_low_conversion_orders [label="R177"];
+s_trust_gap -> s_low_conversion_orders [label="R177"];
+s_low_conversion_orders -> s_improve_gig_page_conversion [label="R217"];
+s_low_conversion_orders -> s_verdict_fix_conversion [label="R218"];
+s_low_conversion_orders -> s_collect_first_reviews [label="R233"];
+}

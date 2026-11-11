@@ -1,0 +1,15 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Too many unrelated gigs"; labelloc=t;
+s_overcompetition_gigs [label="Too many live gigs", fillcolor="#F9E79F"];
+s_pause_extra_gigs [label="Pause unrelated gigs", fillcolor="#ABEBC6"];
+s_too_many_unrelated_gigs [label="Too many unrelated gigs", fillcolor="#F5B7B1"];
+s_gigs_too_many [label="gigs too many", fillcolor="#A8D5E2"];
+s_verdict_fix_positioning [label="Fix positioning first", fillcolor="#D7BDE2"];
+s_overcompetition_gigs -> s_too_many_unrelated_gigs [label="R135"];
+s_overcompetition_gigs -> s_too_many_unrelated_gigs [label="R180"];
+s_gigs_too_many -> s_too_many_unrelated_gigs [label="R180"];
+s_too_many_unrelated_gigs -> s_pause_extra_gigs [label="R189"];
+s_too_many_unrelated_gigs -> s_verdict_fix_positioning [label="R190"];
+}

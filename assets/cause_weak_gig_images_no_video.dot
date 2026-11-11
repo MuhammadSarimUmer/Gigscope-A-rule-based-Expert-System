@@ -1,0 +1,17 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Weak gig images or no video"; labelloc=t;
+s_upgrade_gig_images [label="Upgrade gig images / thum...", fillcolor="#ABEBC6"];
+s_record_gig_video [label="Record a short gig video", fillcolor="#ABEBC6"];
+s_weak_visuals [label="Weak visuals", fillcolor="#F9E79F"];
+s_weak_gig_images_no_video [label="Weak gig images or no video", fillcolor="#F5B7B1"];
+s_no_video_signal [label="No gig video", fillcolor="#F9E79F"];
+s_weak_visuals -> s_weak_gig_images_no_video [label="R142"];
+s_no_video_signal -> s_weak_gig_images_no_video [label="R142"];
+s_weak_visuals -> s_weak_gig_images_no_video [label="R143"];
+s_no_video_signal -> s_weak_gig_images_no_video [label="R176"];
+s_weak_visuals -> s_weak_gig_images_no_video [label="R176"];
+s_weak_gig_images_no_video -> s_upgrade_gig_images [label="R200"];
+s_weak_gig_images_no_video -> s_record_gig_video [label="R201"];
+}

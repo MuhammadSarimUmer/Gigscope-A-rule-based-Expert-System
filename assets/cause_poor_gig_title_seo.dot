@@ -1,0 +1,19 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Poor gig title and keywords"; labelloc=t;
+s_refresh_tags_description_seo [label="Refresh tags and descript...", fillcolor="#ABEBC6"];
+s_poor_gig_title_seo [label="Poor gig title and keywords", fillcolor="#F5B7B1"];
+s_rewrite_gig_title_keyword [label="Rewrite gig title around ...", fillcolor="#ABEBC6"];
+s_weak_gig_seo [label="Weak gig SEO", fillcolor="#F9E79F"];
+s_poor_visibility [label="Poor visibility", fillcolor="#F9E79F"];
+s_verdict_fix_visibility [label="Fix visibility first", fillcolor="#D7BDE2"];
+s_language_quality_issue [label="Language quality issue", fillcolor="#F9E79F"];
+s_weak_gig_seo -> s_poor_gig_title_seo [label="R140"];
+s_weak_gig_seo -> s_poor_gig_title_seo [label="R141"];
+s_language_quality_issue -> s_poor_gig_title_seo [label="R141"];
+s_poor_visibility -> s_poor_gig_title_seo [label="R167"];
+s_poor_gig_title_seo -> s_rewrite_gig_title_keyword [label="R197"];
+s_poor_gig_title_seo -> s_refresh_tags_description_seo [label="R198"];
+s_poor_gig_title_seo -> s_verdict_fix_visibility [label="R199"];
+}

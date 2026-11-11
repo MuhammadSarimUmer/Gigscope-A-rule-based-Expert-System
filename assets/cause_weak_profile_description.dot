@@ -1,0 +1,12 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Weak profile description"; labelloc=t;
+s_weak_first_impression [label="Weak first impression", fillcolor="#F9E79F"];
+s_language_quality_issue [label="Language quality issue", fillcolor="#F9E79F"];
+s_weak_profile_description [label="Weak profile description", fillcolor="#F5B7B1"];
+s_rewrite_profile_about [label="Rewrite profile About sec...", fillcolor="#ABEBC6"];
+s_language_quality_issue -> s_weak_profile_description [label="R162"];
+s_weak_first_impression -> s_weak_profile_description [label="R163"];
+s_weak_profile_description -> s_rewrite_profile_about [label="R210"];
+}

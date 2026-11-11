@@ -1,0 +1,15 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Niche too broad or unfocused"; labelloc=t;
+s_services_scattered [label="services scattered", fillcolor="#A8D5E2"];
+s_niche_too_broad [label="Niche too broad or unfocu...", fillcolor="#F5B7B1"];
+s_unfocused_positioning [label="Unfocused positioning", fillcolor="#F9E79F"];
+s_verdict_fix_positioning [label="Fix positioning first", fillcolor="#D7BDE2"];
+s_narrow_one_core_service [label="Narrow to one core service", fillcolor="#ABEBC6"];
+s_unfocused_positioning -> s_niche_too_broad [label="R134"];
+s_unfocused_positioning -> s_niche_too_broad [label="R173"];
+s_services_scattered -> s_niche_too_broad [label="R173"];
+s_niche_too_broad -> s_narrow_one_core_service [label="R187"];
+s_niche_too_broad -> s_verdict_fix_positioning [label="R188"];
+}

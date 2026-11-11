@@ -1,0 +1,13 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Unverified or incomplete account"; labelloc=t;
+s_verified_no [label="verified no", fillcolor="#A8D5E2"];
+s_complete_verification_profile [label="Complete verification and...", fillcolor="#ABEBC6"];
+s_profile_incomplete_signal [label="Incomplete profile", fillcolor="#F9E79F"];
+s_unverified_incomplete_account [label="Unverified or incomplete ...", fillcolor="#F5B7B1"];
+s_profile_incomplete_signal -> s_unverified_incomplete_account [label="R157"];
+s_profile_incomplete_signal -> s_unverified_incomplete_account [label="R181"];
+s_verified_no -> s_unverified_incomplete_account [label="R181"];
+s_unverified_incomplete_account -> s_complete_verification_profile [label="R219"];
+}

@@ -1,0 +1,13 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Slow response time"; labelloc=t;
+s_verdict_fix_communication [label="Fix communication first", fillcolor="#D7BDE2"];
+s_slow_response_time [label="Slow response time", fillcolor="#F5B7B1"];
+s_reply_within_one_hour [label="Reply within one hour for...", fillcolor="#ABEBC6"];
+s_slow_responsiveness [label="Slow responsiveness", fillcolor="#F9E79F"];
+s_slow_responsiveness -> s_slow_response_time [label="R147"];
+s_slow_response_time -> s_reply_within_one_hour [label="R206"];
+s_slow_response_time -> s_verdict_fix_communication [label="R207"];
+s_slow_response_time -> s_verdict_fix_communication [label="R231"];
+}

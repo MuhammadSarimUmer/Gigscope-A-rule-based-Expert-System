@@ -1,0 +1,15 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Low response rate"; labelloc=t;
+s_low_response_rate [label="Low response rate", fillcolor="#F5B7B1"];
+s_communication_gap [label="Communication gap", fillcolor="#F9E79F"];
+s_verdict_fix_communication [label="Fix communication first", fillcolor="#D7BDE2"];
+s_response_rate_low [label="response rate low", fillcolor="#A8D5E2"];
+s_improve_response_rate [label="Improve response rate to ...", fillcolor="#ABEBC6"];
+s_communication_gap -> s_low_response_rate [label="R148"];
+s_response_rate_low -> s_low_response_rate [label="R148"];
+s_communication_gap -> s_low_response_rate [label="R182"];
+s_low_response_rate -> s_improve_response_rate [label="R208"];
+s_low_response_rate -> s_verdict_fix_communication [label="R231"];
+}

@@ -1,0 +1,69 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - visuals"; labelloc=t;
+{ rank=same; k_record_gig_video; k_improve_thumbnail_title_ctr; k_upgrade_gig_images; }
+k_record_gig_video [label="Record a short gig video", fillcolor="#ABEBC6"];
+k_improve_thumbnail_title_ctr [label="Improve thumbnail and tit...", fillcolor="#ABEBC6"];
+k_upgrade_gig_images [label="Upgrade gig images / thum...", fillcolor="#ABEBC6"];
+{ rank=same; k_weak_visuals; k_healthy_engagement_signals; k_click_attraction_weak; k_no_video_signal; k_low_conversion_signals; k_weak_first_impression; }
+k_weak_visuals [label="Weak visuals", fillcolor="#F9E79F"];
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_click_attraction_weak [label="Weak click attraction", fillcolor="#F9E79F"];
+k_no_video_signal [label="No gig video", fillcolor="#F9E79F"];
+k_low_conversion_signals [label="Low conversion signals", fillcolor="#F9E79F"];
+k_weak_first_impression [label="Weak first impression", fillcolor="#F9E79F"];
+{ rank=same; k_thumbnail_weak; k_thumbnail_strong; k_ctr_strong; k_gig_video_yes; k_gig_image_avg; k_branding_no; k_gig_image_poor; k_ctr_weak; k_conversion_poor; k_demand_high; k_gig_video_no; k_impressions_avg; k_gig_image_pro; }
+k_thumbnail_weak [label="thumbnail weak", fillcolor="#A8D5E2"];
+k_thumbnail_strong [label="thumbnail strong", fillcolor="#A8D5E2"];
+k_ctr_strong [label="ctr strong", fillcolor="#A8D5E2"];
+k_gig_video_yes [label="gig video yes", fillcolor="#A8D5E2"];
+k_gig_image_avg [label="gig image avg", fillcolor="#A8D5E2"];
+k_branding_no [label="branding no", fillcolor="#A8D5E2"];
+k_gig_image_poor [label="gig image poor", fillcolor="#A8D5E2"];
+k_ctr_weak [label="ctr weak", fillcolor="#A8D5E2"];
+k_conversion_poor [label="conversion poor", fillcolor="#A8D5E2"];
+k_demand_high [label="demand high", fillcolor="#A8D5E2"];
+k_gig_video_no [label="gig video no", fillcolor="#A8D5E2"];
+k_impressions_avg [label="impressions avg", fillcolor="#A8D5E2"];
+k_gig_image_pro [label="gig image pro", fillcolor="#A8D5E2"];
+{ rank=same; k_weak_gig_images_no_video; k_low_ctr_attraction; }
+k_weak_gig_images_no_video [label="Weak gig images or no video", fillcolor="#F5B7B1"];
+k_low_ctr_attraction [label="Low click-through (attrac...", fillcolor="#F5B7B1"];
+{ rank=same; k_verdict_fix_visibility; }
+k_verdict_fix_visibility [label="Fix visibility first", fillcolor="#D7BDE2"];
+k_gig_image_poor -> k_weak_visuals [label="R049"];
+k_gig_image_avg -> k_weak_visuals [label="R050"];
+k_thumbnail_weak -> k_weak_visuals [label="R050"];
+k_gig_video_no -> k_no_video_signal [label="R051"];
+k_demand_high -> k_no_video_signal [label="R051"];
+k_gig_video_no -> k_weak_visuals [label="R052"];
+k_gig_image_poor -> k_weak_visuals [label="R052"];
+k_branding_no -> k_weak_first_impression [label="R053"];
+k_thumbnail_weak -> k_click_attraction_weak [label="R054"];
+k_impressions_avg -> k_click_attraction_weak [label="R054"];
+k_gig_image_pro -> k_healthy_engagement_signals [label="R055"];
+k_gig_video_yes -> k_healthy_engagement_signals [label="R055"];
+k_thumbnail_strong -> k_healthy_engagement_signals [label="R056"];
+k_ctr_strong -> k_healthy_engagement_signals [label="R056"];
+k_gig_image_poor -> k_click_attraction_weak [label="R057"];
+k_ctr_weak -> k_click_attraction_weak [label="R057"];
+k_gig_video_no -> k_low_conversion_signals [label="R058"];
+k_conversion_poor -> k_low_conversion_signals [label="R058"];
+k_gig_image_pro -> k_low_conversion_signals [label="R128"];
+k_conversion_poor -> k_low_conversion_signals [label="R128"];
+k_weak_visuals -> k_weak_gig_images_no_video [label="R142"];
+k_no_video_signal -> k_weak_gig_images_no_video [label="R142"];
+k_weak_visuals -> k_weak_gig_images_no_video [label="R143"];
+k_click_attraction_weak -> k_low_ctr_attraction [label="R153"];
+k_no_video_signal -> k_weak_gig_images_no_video [label="R176"];
+k_weak_visuals -> k_weak_gig_images_no_video [label="R176"];
+k_click_attraction_weak -> k_low_ctr_attraction [label="R178"];
+k_thumbnail_weak -> k_low_ctr_attraction [label="R178"];
+k_weak_gig_images_no_video -> k_upgrade_gig_images [label="R200"];
+k_weak_gig_images_no_video -> k_record_gig_video [label="R201"];
+k_low_ctr_attraction -> k_improve_thumbnail_title_ctr [label="R215"];
+k_low_ctr_attraction -> k_verdict_fix_visibility [label="R216"];
+}

@@ -1,0 +1,19 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Impatience — profile OK"; labelloc=t;
+s_stay_consistent_30_days [label="Stay consistent 30 more d...", fillcolor="#ABEBC6"];
+s_manage_expectations_timeline [label="Reset timeline expectations", fillcolor="#ABEBC6"];
+s_impatience_quit_risk [label="Impatience — profile OK", fillcolor="#F5B7B1"];
+s_patience_low [label="patience low", fillcolor="#A8D5E2"];
+s_impatience_risk [label="Impatience risk", fillcolor="#F9E79F"];
+s_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+s_verdict_healthy_patient [label="Profile looks healthy: be...", fillcolor="#D7BDE2"];
+s_healthy_engagement_signals -> s_impatience_quit_risk [label="R160"];
+s_patience_low -> s_impatience_quit_risk [label="R160"];
+s_impatience_risk -> s_impatience_quit_risk [label="R161"];
+s_healthy_engagement_signals -> s_impatience_quit_risk [label="R161"];
+s_impatience_quit_risk -> s_stay_consistent_30_days [label="R223"];
+s_impatience_quit_risk -> s_manage_expectations_timeline [label="R224"];
+s_impatience_quit_risk -> s_verdict_healthy_patient [label="R225"];
+}

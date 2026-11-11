@@ -1,0 +1,37 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Profile healthy — needs time"; labelloc=t;
+s_repeat_client_weak [label="Weak repeat business", fillcolor="#F9E79F"];
+s_routine_yes [label="routine yes", fillcolor="#A8D5E2"];
+s_account_mature [label="account mature", fillcolor="#A8D5E2"];
+s_rating_high [label="rating high", fillcolor="#A8D5E2"];
+s_reviews_5_19 [label="reviews 5 19", fillcolor="#A8D5E2"];
+s_stay_consistent_30_days [label="Stay consistent 30 more d...", fillcolor="#ABEBC6"];
+s_profile_healthy_be_patient [label="Profile healthy — needs t...", fillcolor="#F5B7B1"];
+s_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+s_new_account_patience [label="New account patience needed", fillcolor="#F9E79F"];
+s_verdict_healthy_patient [label="Profile looks healthy: be...", fillcolor="#D7BDE2"];
+s_account_new [label="account new", fillcolor="#A8D5E2"];
+s_reviews_20plus [label="reviews 20plus", fillcolor="#A8D5E2"];
+s_reviews_0 [label="reviews 0", fillcolor="#A8D5E2"];
+s_healthy_engagement_signals -> s_profile_healthy_be_patient [label="R159"];
+s_account_new -> s_profile_healthy_be_patient [label="R159"];
+s_new_account_patience -> s_profile_healthy_be_patient [label="R159"];
+s_repeat_client_weak -> s_profile_healthy_be_patient [label="R168"];
+s_reviews_5_19 -> s_profile_healthy_be_patient [label="R168"];
+s_healthy_engagement_signals -> s_profile_healthy_be_patient [label="R169"];
+s_account_mature -> s_profile_healthy_be_patient [label="R169"];
+s_rating_high -> s_profile_healthy_be_patient [label="R169"];
+s_reviews_20plus -> s_profile_healthy_be_patient [label="R169"];
+s_healthy_engagement_signals -> s_profile_healthy_be_patient [label="R170"];
+s_reviews_5_19 -> s_profile_healthy_be_patient [label="R170"];
+s_routine_yes -> s_profile_healthy_be_patient [label="R170"];
+s_new_account_patience -> s_profile_healthy_be_patient [label="R171"];
+s_healthy_engagement_signals -> s_profile_healthy_be_patient [label="R171"];
+s_new_account_patience -> s_profile_healthy_be_patient [label="R172"];
+s_healthy_engagement_signals -> s_profile_healthy_be_patient [label="R172"];
+s_reviews_0 -> s_profile_healthy_be_patient [label="R172"];
+s_profile_healthy_be_patient -> s_stay_consistent_30_days [label="R221"];
+s_profile_healthy_be_patient -> s_verdict_healthy_patient [label="R222"];
+}

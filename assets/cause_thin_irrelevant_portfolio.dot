@@ -1,0 +1,14 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Thin or irrelevant portfolio"; labelloc=t;
+s_thin_irrelevant_portfolio [label="Thin or irrelevant portfo...", fillcolor="#F5B7B1"];
+s_verdict_fix_trust [label="Fix trust and social proo...", fillcolor="#D7BDE2"];
+s_thin_portfolio_signal [label="Thin portfolio", fillcolor="#F9E79F"];
+s_strong_skills_weak_presentation [label="Strong skills, weak prese...", fillcolor="#F9E79F"];
+s_build_relevant_portfolio [label="Add three relevant portfo...", fillcolor="#ABEBC6"];
+s_thin_portfolio_signal -> s_thin_irrelevant_portfolio [label="R144"];
+s_strong_skills_weak_presentation -> s_thin_irrelevant_portfolio [label="R158"];
+s_thin_irrelevant_portfolio -> s_build_relevant_portfolio [label="R202"];
+s_thin_irrelevant_portfolio -> s_verdict_fix_trust [label="R228"];
+}

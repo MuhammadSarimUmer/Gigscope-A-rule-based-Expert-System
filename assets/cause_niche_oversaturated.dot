@@ -1,0 +1,15 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Niche oversaturated for a new seller"; labelloc=t;
+s_differentiate_saturated_niche [label="Differentiate in a satura...", fillcolor="#ABEBC6"];
+s_saturated_niche_new_seller [label="Saturated niche for newco...", fillcolor="#F9E79F"];
+s_demand_saturated [label="demand saturated", fillcolor="#A8D5E2"];
+s_verdict_fix_positioning [label="Fix positioning first", fillcolor="#D7BDE2"];
+s_niche_oversaturated [label="Niche oversaturated for a...", fillcolor="#F5B7B1"];
+s_saturated_niche_new_seller -> s_niche_oversaturated [label="R136"];
+s_saturated_niche_new_seller -> s_niche_oversaturated [label="R174"];
+s_demand_saturated -> s_niche_oversaturated [label="R174"];
+s_niche_oversaturated -> s_differentiate_saturated_niche [label="R191"];
+s_niche_oversaturated -> s_verdict_fix_positioning [label="R226"];
+}

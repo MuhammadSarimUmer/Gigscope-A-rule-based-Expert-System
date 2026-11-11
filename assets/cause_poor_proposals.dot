@@ -1,0 +1,17 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Poor proposals"; labelloc=t;
+s_bid_spray [label="bid spray", fillcolor="#A8D5E2"];
+s_poor_proposals [label="Poor proposals", fillcolor="#F5B7B1"];
+s_tailored_proposals_daily [label="Send 10 tailored proposal...", fillcolor="#ABEBC6"];
+s_connects_inefficiency [label="Inefficient connects use", fillcolor="#F9E79F"];
+s_weak_proposal_quality [label="Weak proposal quality", fillcolor="#F9E79F"];
+s_verdict_fix_communication [label="Fix communication first", fillcolor="#D7BDE2"];
+s_weak_proposal_quality -> s_poor_proposals [label="R155"];
+s_connects_inefficiency -> s_poor_proposals [label="R166"];
+s_weak_proposal_quality -> s_poor_proposals [label="R184"];
+s_bid_spray -> s_poor_proposals [label="R184"];
+s_poor_proposals -> s_tailored_proposals_daily [label="R211"];
+s_poor_proposals -> s_verdict_fix_communication [label="R230"];
+}

@@ -1,0 +1,20 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="No reviews / weak social proof"; labelloc=t;
+s_no_reviews_social_proof [label="No reviews / weak social ...", fillcolor="#F5B7B1"];
+s_lower_price_temporarily [label="Lower price temporarily f...", fillcolor="#ABEBC6"];
+s_verdict_fix_trust [label="Fix trust and social proo...", fillcolor="#D7BDE2"];
+s_promo_first_five_orders [label="Run promo for first five ...", fillcolor="#ABEBC6"];
+s_trust_gap [label="Trust gap", fillcolor="#F9E79F"];
+s_collect_first_reviews [label="Collect first reviews eth...", fillcolor="#ABEBC6"];
+s_reviews_0 [label="reviews 0", fillcolor="#A8D5E2"];
+s_trust_gap -> s_no_reviews_social_proof [label="R145"];
+s_reviews_0 -> s_no_reviews_social_proof [label="R145"];
+s_trust_gap -> s_no_reviews_social_proof [label="R146"];
+s_no_reviews_social_proof -> s_collect_first_reviews [label="R203"];
+s_no_reviews_social_proof -> s_promo_first_five_orders [label="R204"];
+s_no_reviews_social_proof -> s_verdict_fix_trust [label="R205"];
+s_no_reviews_social_proof -> s_lower_price_temporarily [label="R232"];
+s_no_reviews_social_proof -> s_collect_first_reviews [label="R233"];
+}

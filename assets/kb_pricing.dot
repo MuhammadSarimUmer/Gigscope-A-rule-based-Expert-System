@@ -1,0 +1,77 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - pricing"; labelloc=t;
+{ rank=same; k_price_slightly_lower; k_price_average; k_account_new; k_reviews_0; k_price_jump_yes; k_reviews_5_19; k_extras_no; k_price_above_avg; k_packages_yes; k_price_objection_yes; k_level_new; k_price_much_higher; k_price_much_lower; k_packages_no; k_reviews_20plus; k_discount_strategy_yes; }
+k_price_slightly_lower [label="price slightly lower", fillcolor="#A8D5E2"];
+k_price_average [label="price average", fillcolor="#A8D5E2"];
+k_account_new [label="account new", fillcolor="#A8D5E2"];
+k_reviews_0 [label="reviews 0", fillcolor="#A8D5E2"];
+k_price_jump_yes [label="price jump yes", fillcolor="#A8D5E2"];
+k_reviews_5_19 [label="reviews 5 19", fillcolor="#A8D5E2"];
+k_extras_no [label="extras no", fillcolor="#A8D5E2"];
+k_price_above_avg [label="price above avg", fillcolor="#A8D5E2"];
+k_packages_yes [label="packages yes", fillcolor="#A8D5E2"];
+k_price_objection_yes [label="price objection yes", fillcolor="#A8D5E2"];
+k_level_new [label="level new", fillcolor="#A8D5E2"];
+k_price_much_higher [label="price much higher", fillcolor="#A8D5E2"];
+k_price_much_lower [label="price much lower", fillcolor="#A8D5E2"];
+k_packages_no [label="packages no", fillcolor="#A8D5E2"];
+k_reviews_20plus [label="reviews 20plus", fillcolor="#A8D5E2"];
+k_discount_strategy_yes [label="discount strategy yes", fillcolor="#A8D5E2"];
+{ rank=same; k_price_too_low_quality_signal; k_price_too_high_maturity; k_no_reviews_social_proof; k_weak_packages; }
+k_price_too_low_quality_signal [label="Price too low (quality si...", fillcolor="#F5B7B1"];
+k_price_too_high_maturity [label="Price too high for accoun...", fillcolor="#F5B7B1"];
+k_no_reviews_social_proof [label="No reviews / weak social ...", fillcolor="#F5B7B1"];
+k_weak_packages [label="Weak or missing packages", fillcolor="#F5B7B1"];
+{ rank=same; k_discount_overuse; k_healthy_engagement_signals; k_price_mismatch_low; k_price_mismatch_high; k_missing_packages_signal; }
+k_discount_overuse [label="Discount overuse", fillcolor="#F9E79F"];
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_price_mismatch_low [label="Price signals low quality", fillcolor="#F9E79F"];
+k_price_mismatch_high [label="Price above buyer expecta...", fillcolor="#F9E79F"];
+k_missing_packages_signal [label="Missing package structure", fillcolor="#F9E79F"];
+{ rank=same; k_lower_price_temporarily; k_add_three_tier_packages; k_raise_prices_modestly; }
+k_lower_price_temporarily [label="Lower price temporarily f...", fillcolor="#ABEBC6"];
+k_add_three_tier_packages [label="Add three-tier packages", fillcolor="#ABEBC6"];
+k_raise_prices_modestly [label="Raise prices to credible ...", fillcolor="#ABEBC6"];
+{ rank=same; k_verdict_fix_conversion; k_verdict_fix_pricing; }
+k_verdict_fix_conversion [label="Fix conversion first", fillcolor="#D7BDE2"];
+k_verdict_fix_pricing [label="Fix pricing first", fillcolor="#D7BDE2"];
+k_price_much_higher -> k_price_mismatch_high [label="R025"];
+k_level_new -> k_price_mismatch_high [label="R025"];
+k_price_much_higher -> k_price_mismatch_high [label="R026"];
+k_reviews_0 -> k_price_mismatch_high [label="R026"];
+k_price_above_avg -> k_price_mismatch_high [label="R027"];
+k_account_new -> k_price_mismatch_high [label="R027"];
+k_price_much_lower -> k_price_mismatch_low [label="R028"];
+k_price_objection_yes -> k_price_mismatch_high [label="R029"];
+k_packages_no -> k_missing_packages_signal [label="R030"];
+k_price_jump_yes -> k_price_mismatch_high [label="R031"];
+k_discount_strategy_yes -> k_discount_overuse [label="R032"];
+k_level_new -> k_discount_overuse [label="R032"];
+k_price_average -> k_healthy_engagement_signals [label="R033"];
+k_reviews_5_19 -> k_healthy_engagement_signals [label="R033"];
+k_price_slightly_lower -> k_healthy_engagement_signals [label="R034"];
+k_account_new -> k_healthy_engagement_signals [label="R034"];
+k_extras_no -> k_missing_packages_signal [label="R035"];
+k_packages_yes -> k_missing_packages_signal [label="R035"];
+k_price_much_lower -> k_price_mismatch_low [label="R036"];
+k_reviews_20plus -> k_price_mismatch_low [label="R036"];
+k_price_mismatch_high -> k_price_too_high_maturity [label="R137"];
+k_price_mismatch_low -> k_price_too_low_quality_signal [label="R138"];
+k_missing_packages_signal -> k_weak_packages [label="R139"];
+k_discount_overuse -> k_price_too_low_quality_signal [label="R164"];
+k_price_mismatch_low -> k_price_too_low_quality_signal [label="R164"];
+k_price_mismatch_high -> k_price_too_high_maturity [label="R175"];
+k_level_new -> k_price_too_high_maturity [label="R175"];
+k_price_too_high_maturity -> k_lower_price_temporarily [label="R192"];
+k_price_too_high_maturity -> k_verdict_fix_pricing [label="R193"];
+k_price_too_low_quality_signal -> k_raise_prices_modestly [label="R194"];
+k_price_too_low_quality_signal -> k_verdict_fix_pricing [label="R195"];
+k_weak_packages -> k_add_three_tier_packages [label="R196"];
+k_weak_packages -> k_verdict_fix_conversion [label="R227"];
+k_price_too_high_maturity -> k_lower_price_temporarily [label="R232"];
+k_no_reviews_social_proof -> k_lower_price_temporarily [label="R232"];
+}

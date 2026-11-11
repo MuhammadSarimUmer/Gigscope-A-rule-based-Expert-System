@@ -1,0 +1,85 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - reviews"; labelloc=t;
+{ rank=same; k_reputation_damage; k_order_completion_risk; k_healthy_engagement_signals; k_repeat_client_weak; k_low_conversion_signals; k_price_mismatch_high; k_trust_gap; }
+k_reputation_damage [label="Reputation damage", fillcolor="#F9E79F"];
+k_order_completion_risk [label="Order completion risk", fillcolor="#F9E79F"];
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_repeat_client_weak [label="Weak repeat business", fillcolor="#F9E79F"];
+k_low_conversion_signals [label="Low conversion signals", fillcolor="#F9E79F"];
+k_price_mismatch_high [label="Price above buyer expecta...", fillcolor="#F9E79F"];
+k_trust_gap [label="Trust gap", fillcolor="#F9E79F"];
+{ rank=same; k_recent_negative_yes; k_rating_high; k_price_average; k_rating_very_low; k_reviews_0; k_rating_low; k_cancellations_recent; k_reviews_5_19; k_completion_high; k_completion_low; k_reviews_1_4; k_repeat_many; k_price_much_higher; k_repeat_none; k_testimonials_no; k_level_top; k_reviews_20plus; }
+k_recent_negative_yes [label="recent negative yes", fillcolor="#A8D5E2"];
+k_rating_high [label="rating high", fillcolor="#A8D5E2"];
+k_price_average [label="price average", fillcolor="#A8D5E2"];
+k_rating_very_low [label="rating very low", fillcolor="#A8D5E2"];
+k_reviews_0 [label="reviews 0", fillcolor="#A8D5E2"];
+k_rating_low [label="rating low", fillcolor="#A8D5E2"];
+k_cancellations_recent [label="cancellations recent", fillcolor="#A8D5E2"];
+k_reviews_5_19 [label="reviews 5 19", fillcolor="#A8D5E2"];
+k_completion_high [label="completion high", fillcolor="#A8D5E2"];
+k_completion_low [label="completion low", fillcolor="#A8D5E2"];
+k_reviews_1_4 [label="reviews 1 4", fillcolor="#A8D5E2"];
+k_repeat_many [label="repeat many", fillcolor="#A8D5E2"];
+k_price_much_higher [label="price much higher", fillcolor="#A8D5E2"];
+k_repeat_none [label="repeat none", fillcolor="#A8D5E2"];
+k_testimonials_no [label="testimonials no", fillcolor="#A8D5E2"];
+k_level_top [label="level top", fillcolor="#A8D5E2"];
+k_reviews_20plus [label="reviews 20plus", fillcolor="#A8D5E2"];
+{ rank=same; k_promo_first_five_orders; k_collect_first_reviews; k_address_negative_review; }
+k_promo_first_five_orders [label="Run promo for first five ...", fillcolor="#ABEBC6"];
+k_collect_first_reviews [label="Collect first reviews eth...", fillcolor="#ABEBC6"];
+k_address_negative_review [label="Address recent negative r...", fillcolor="#ABEBC6"];
+{ rank=same; k_no_reviews_social_proof; k_bad_review_cancellation_damage; k_low_conversion_orders; k_profile_healthy_be_patient; }
+k_no_reviews_social_proof [label="No reviews / weak social ...", fillcolor="#F5B7B1"];
+k_bad_review_cancellation_damage [label="Recent bad review / cance...", fillcolor="#F5B7B1"];
+k_low_conversion_orders [label="Low conversion (clicks, n...", fillcolor="#F5B7B1"];
+k_profile_healthy_be_patient [label="Profile healthy — needs t...", fillcolor="#F5B7B1"];
+{ rank=same; k_verdict_fix_trust; }
+k_verdict_fix_trust [label="Fix trust and social proo...", fillcolor="#D7BDE2"];
+k_reviews_0 -> k_trust_gap [label="R081"];
+k_recent_negative_yes -> k_reputation_damage [label="R082"];
+k_rating_very_low -> k_reputation_damage [label="R083"];
+k_completion_low -> k_order_completion_risk [label="R084"];
+k_cancellations_recent -> k_reputation_damage [label="R085"];
+k_repeat_none -> k_repeat_client_weak [label="R086"];
+k_reviews_5_19 -> k_repeat_client_weak [label="R086"];
+k_testimonials_no -> k_trust_gap [label="R087"];
+k_reviews_1_4 -> k_trust_gap [label="R087"];
+k_reviews_20plus -> k_healthy_engagement_signals [label="R088"];
+k_rating_high -> k_healthy_engagement_signals [label="R088"];
+k_recent_negative_yes -> k_reputation_damage [label="R089"];
+k_rating_low -> k_reputation_damage [label="R089"];
+k_reviews_0 -> k_price_mismatch_high [label="R090"];
+k_price_much_higher -> k_price_mismatch_high [label="R090"];
+k_rating_high -> k_healthy_engagement_signals [label="R091"];
+k_repeat_many -> k_healthy_engagement_signals [label="R091"];
+k_completion_high -> k_healthy_engagement_signals [label="R092"];
+k_rating_high -> k_healthy_engagement_signals [label="R092"];
+k_price_average -> k_trust_gap [label="R127"];
+k_reviews_0 -> k_trust_gap [label="R127"];
+k_level_top -> k_healthy_engagement_signals [label="R129"];
+k_rating_high -> k_healthy_engagement_signals [label="R129"];
+k_trust_gap -> k_no_reviews_social_proof [label="R145"];
+k_reviews_0 -> k_no_reviews_social_proof [label="R145"];
+k_trust_gap -> k_no_reviews_social_proof [label="R146"];
+k_reputation_damage -> k_bad_review_cancellation_damage [label="R152"];
+k_order_completion_risk -> k_bad_review_cancellation_damage [label="R165"];
+k_repeat_client_weak -> k_profile_healthy_be_patient [label="R168"];
+k_reviews_5_19 -> k_profile_healthy_be_patient [label="R168"];
+k_low_conversion_signals -> k_low_conversion_orders [label="R177"];
+k_trust_gap -> k_low_conversion_orders [label="R177"];
+k_reputation_damage -> k_bad_review_cancellation_damage [label="R186"];
+k_recent_negative_yes -> k_bad_review_cancellation_damage [label="R186"];
+k_no_reviews_social_proof -> k_collect_first_reviews [label="R203"];
+k_no_reviews_social_proof -> k_promo_first_five_orders [label="R204"];
+k_no_reviews_social_proof -> k_verdict_fix_trust [label="R205"];
+k_bad_review_cancellation_damage -> k_address_negative_review [label="R214"];
+k_bad_review_cancellation_damage -> k_verdict_fix_trust [label="R229"];
+k_low_conversion_orders -> k_collect_first_reviews [label="R233"];
+k_no_reviews_social_proof -> k_collect_first_reviews [label="R233"];
+}

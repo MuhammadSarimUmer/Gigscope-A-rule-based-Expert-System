@@ -1,0 +1,16 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Price too high for account maturity"; labelloc=t;
+s_price_mismatch_high [label="Price above buyer expecta...", fillcolor="#F9E79F"];
+s_lower_price_temporarily [label="Lower price temporarily f...", fillcolor="#ABEBC6"];
+s_price_too_high_maturity [label="Price too high for accoun...", fillcolor="#F5B7B1"];
+s_verdict_fix_pricing [label="Fix pricing first", fillcolor="#D7BDE2"];
+s_level_new [label="level new", fillcolor="#A8D5E2"];
+s_price_mismatch_high -> s_price_too_high_maturity [label="R137"];
+s_price_mismatch_high -> s_price_too_high_maturity [label="R175"];
+s_level_new -> s_price_too_high_maturity [label="R175"];
+s_price_too_high_maturity -> s_lower_price_temporarily [label="R192"];
+s_price_too_high_maturity -> s_verdict_fix_pricing [label="R193"];
+s_price_too_high_maturity -> s_lower_price_temporarily [label="R232"];
+}

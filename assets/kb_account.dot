@@ -1,0 +1,56 @@
+digraph KBTree {
+rankdir=TB;
+bgcolor="white";
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+edge [fontname="Arial", fontsize=8];
+label="Knowledge base - account"; labelloc=t;
+{ rank=same; k_healthy_engagement_signals; k_new_account_patience; k_profile_incomplete_signal; k_weak_first_impression; k_trust_gap; }
+k_healthy_engagement_signals [label="Healthy engagement", fillcolor="#F9E79F"];
+k_new_account_patience [label="New account patience needed", fillcolor="#F9E79F"];
+k_profile_incomplete_signal [label="Incomplete profile", fillcolor="#F9E79F"];
+k_weak_first_impression [label="Weak first impression", fillcolor="#F9E79F"];
+k_trust_gap [label="Trust gap", fillcolor="#F9E79F"];
+{ rank=same; k_complete_verification_profile; k_rewrite_profile_about; }
+k_complete_verification_profile [label="Complete verification and...", fillcolor="#ABEBC6"];
+k_rewrite_profile_about [label="Rewrite profile About sec...", fillcolor="#ABEBC6"];
+{ rank=same; k_reviews_0; k_verified_no; k_account_over_1y; k_pro_photo_no; k_verified_yes; k_level_new; k_pro_photo_yes; k_profile_low_complete; k_profile_high_complete; k_account_under_1m; k_profile_mid_complete; }
+k_reviews_0 [label="reviews 0", fillcolor="#A8D5E2"];
+k_verified_no [label="verified no", fillcolor="#A8D5E2"];
+k_account_over_1y [label="account over 1y", fillcolor="#A8D5E2"];
+k_pro_photo_no [label="pro photo no", fillcolor="#A8D5E2"];
+k_verified_yes [label="verified yes", fillcolor="#A8D5E2"];
+k_level_new [label="level new", fillcolor="#A8D5E2"];
+k_pro_photo_yes [label="pro photo yes", fillcolor="#A8D5E2"];
+k_profile_low_complete [label="profile low complete", fillcolor="#A8D5E2"];
+k_profile_high_complete [label="profile high complete", fillcolor="#A8D5E2"];
+k_account_under_1m [label="account under 1m", fillcolor="#A8D5E2"];
+k_profile_mid_complete [label="profile mid complete", fillcolor="#A8D5E2"];
+{ rank=same; k_weak_profile_description; k_unverified_incomplete_account; }
+k_weak_profile_description [label="Weak profile description", fillcolor="#F5B7B1"];
+k_unverified_incomplete_account [label="Unverified or incomplete ...", fillcolor="#F5B7B1"];
+k_profile_low_complete -> k_profile_incomplete_signal [label="R001"];
+k_verified_no -> k_profile_incomplete_signal [label="R001"];
+k_profile_low_complete -> k_weak_first_impression [label="R002"];
+k_verified_no -> k_trust_gap [label="R003"];
+k_pro_photo_no -> k_weak_first_impression [label="R004"];
+k_level_new -> k_trust_gap [label="R005"];
+k_reviews_0 -> k_trust_gap [label="R005"];
+k_account_under_1m -> k_new_account_patience [label="R006"];
+k_profile_high_complete -> k_healthy_engagement_signals [label="R007"];
+k_verified_yes -> k_healthy_engagement_signals [label="R007"];
+k_pro_photo_yes -> k_healthy_engagement_signals [label="R008"];
+k_profile_high_complete -> k_healthy_engagement_signals [label="R008"];
+k_level_new -> k_trust_gap [label="R009"];
+k_account_over_1y -> k_trust_gap [label="R009"];
+k_profile_mid_complete -> k_weak_first_impression [label="R010"];
+k_pro_photo_no -> k_weak_first_impression [label="R010"];
+k_verified_yes -> k_healthy_engagement_signals [label="R011"];
+k_profile_high_complete -> k_healthy_engagement_signals [label="R011"];
+k_pro_photo_yes -> k_healthy_engagement_signals [label="R011"];
+k_profile_incomplete_signal -> k_unverified_incomplete_account [label="R157"];
+k_weak_first_impression -> k_weak_profile_description [label="R163"];
+k_profile_incomplete_signal -> k_unverified_incomplete_account [label="R181"];
+k_verified_no -> k_unverified_incomplete_account [label="R181"];
+k_weak_profile_description -> k_rewrite_profile_about [label="R210"];
+k_unverified_incomplete_account -> k_complete_verification_profile [label="R219"];
+}

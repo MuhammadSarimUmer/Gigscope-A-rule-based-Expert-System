@@ -1,0 +1,14 @@
+digraph SubTree {
+rankdir=TB;
+node [shape=box, style="filled,rounded", fontname="Arial", fontsize=10];
+label="Wrong target clients or region"; labelloc=t;
+s_wrong_market_fit [label="Wrong market fit", fillcolor="#F9E79F"];
+s_wrong_target_clients [label="Wrong target clients or r...", fillcolor="#F5B7B1"];
+s_timezone_mismatch [label="timezone mismatch", fillcolor="#A8D5E2"];
+s_retarget_buyer_country [label="Retarget primary buyer co...", fillcolor="#ABEBC6"];
+s_wrong_market_fit -> s_wrong_target_clients [label="R149"];
+s_timezone_mismatch -> s_wrong_target_clients [label="R149"];
+s_wrong_market_fit -> s_wrong_target_clients [label="R150"];
+s_timezone_mismatch -> s_wrong_target_clients [label="R183"];
+s_wrong_target_clients -> s_retarget_buyer_country [label="R212"];
+}
