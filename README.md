@@ -1,6 +1,7 @@
 # GigScope
 
 Rule-based expert system that diagnoses why a freelancer may not be getting orders on Fiverr/Upwork, then ranks fixes using a decision support layer.
+https://gigscope-a-rule-based-expert-system-vsree2xjit86tetmzuvots.streamlit.app/
 
 ## Features
 
